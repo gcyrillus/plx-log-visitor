@@ -2,7 +2,7 @@
 squelette d'un plugin laissant l'accés à une page aprés connexion.
 
 installé le plugin via l'administration 
-un champ supplementaire est disponible , L_PROFIL_VISITOR
+un champ supplementaire est disponible , PROFIL_VISITOR (utilise pour les langues : `L_PLUGINS_REQUIREMENTS_NONE` pour decrire le profil à ***aucun***  )
 
 Ce qu'il manque : le fichier langue pour afficher visiteur ou visitor :)
 
@@ -14,7 +14,7 @@ else {header('Location: auth.php?p='.htmlentities($_SERVER['REQUEST_URI']));}
 ?>
 ``` 
 
-si vous étes logué avec le profil L_PROFIL_VISITOR, toute tentatives d'accés à l'administration doit vous renvoyé sur la page d'accueil.
+si vous étes logué avec le profil PROFIL_VISITOR, toute tentatives d'accés à l'administration doit vous renvoyé sur la page d'accueil.
 
 N'hesitez pas a forker et commenter.
 
