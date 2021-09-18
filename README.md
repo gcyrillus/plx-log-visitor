@@ -11,7 +11,7 @@ Exemple d'usage basique pour obliger a s'identifier pour accéder à une page ar
 Ajouter dans les fichiers du thème et en premiere ligne: **article.php** et **article-full-width.php** , idem pour **categorie.php** et **categorie-full-width.php** la portion de code suivante qui renverra l'utilisateur sur la page d'authenfication pour y accéder.
 ```
 <?php if($_SESSION['profil']!='') {}
-else {header('Location: /core/admin/auth.php?p='.htmlentities($_SERVER['REQUEST_URI']));}
+else {header('Location: /core/admin/auth.php?page='.$_SERVER['REQUEST_URI']);}
 ?>
 ``` 
 
