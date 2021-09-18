@@ -3,7 +3,7 @@ squelette d'un plugin laissant l'accés à une page aprés connexion.
 
 installé le plugin via l'administration.
 
-Un champ supplementaire est alors disponible pour les profiles utilisateurs dans l'admin :  PROFIL_VISITOR , qui utilises pour les langues : `L_PLUGINS_REQUIREMENTS_NONE` pour decrire le profil à ***aucun***  )
+Un champ supplementaire est alors disponible pour les profiles utilisateurs dans l'admin :  PROFIL_VISITOR , qui utilise pour les langues : `L_PLUGINS_REQUIREMENTS_NONE` pour decrire le profil à ***aucun***  )
 
 
 Exemple d'usage basique pour obliger a s'identifier pour accéder à une page article ou categorie:
@@ -15,7 +15,7 @@ else {header('Location: auth.php?p='.htmlentities($_SERVER['REQUEST_URI']));}
 ?>
 ``` 
 
-si vous étes logué avec le profil `PROFIL_VISITOR`, toutes tentatives d'accés à l'administration doit vous renvoyer sur la page d'accueil du site.
+Si vous étes logué avec le profil `PROFIL_VISITOR`, toutes tentatives d'accés à l'administration doit vous renvoyer sur la page d'accueil du site, il n'y a pas la possibilité de se déconnecter durant la durée de la session.
 
 N'hesitez pas a forker et commenter.
 
