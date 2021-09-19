@@ -3,7 +3,7 @@
    <title>visitor</title>
    <author>gcyrillus</author>
    <version>beta</version>
-   <date>19/03/2021</date>
+   <date>19/09/2021</date>
     <site>https://re7net.com</site>
     <repository>https://github.com/gcyrillus/visitor/</repository>
    <description>ajout d'un champ dans les profils utilisateurs de pluxml , permettant ensuite de filtrer cette utilisateur sur le front </description>
