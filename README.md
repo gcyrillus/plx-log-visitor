@@ -10,7 +10,7 @@ L'ajout d'un nouveau profil est aussitôt disponible dans la gestion des utilisa
 cliquez sur configuration. 
 Un backup du fichier **users.xml** est effectué en **users.xml.bak** et un fichier **username.csv** est créer dans le répertoire du plugin avec les entêtes suivant:
 ```
-login , name , password , email
+login ; name ; password ; email
 ```
 Ce fichier est chargé et affiché dans un textarea
 Il vous est possible de l’éditer pour y ajouter un nouvel utilisateur par ligne en respectant l'entête .
