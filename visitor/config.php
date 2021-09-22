@@ -23,7 +23,7 @@ if  (@($open = fopen(PLX_PLUGINS.$plugin."/username.csv", "r")) !== FALSE) {
 }
 else {
 	$open = fopen(PLX_PLUGINS.$plugin."/username.csv", "w") ;
-	$fileCsv="login , name , password , email\n";
+	$fileCsv="login ; name ; password ; email\n";
 	fwrite($open, $fileCsv);
 	fclose($open);
 }
@@ -76,7 +76,7 @@ if ((file_exists(PLX_ROOT.PLX_CONFIG_PATH.'users.xml')) && (($open = fopen(PLX_P
 
 
 	// on commence avec le fichier csv  
-    while (($data = fgetcsv($open, 1000, ",")) !== FALSE)     {        
+    while (($data = fgetcsv($open, 1000, ";")) !== FALSE)     {        
       $array[] = $data; 
     }  
     fclose($open);
