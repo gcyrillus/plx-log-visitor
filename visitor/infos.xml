@@ -6,5 +6,5 @@
    <date>19/09/2021</date>
     <site>https://re7net.com</site>
     <repository>https://github.com/gcyrillus/plx-log-visitor</repository>
-   <description>ajout d'un profil utilisateur de pluxml , permettant ensuite de filtrer cette utilisateur sur le front sans accés à l'administration. </description>
+   <description>ajout d'un profil utilisateur, permettant ensuite de filtrer cette utilisateur sur le front sans accés à l'administration. </description>
 </document>
