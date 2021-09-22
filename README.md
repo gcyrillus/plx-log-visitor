@@ -36,10 +36,12 @@ else {header('Location: /core/admin/auth.php?page='.$_SERVER['REQUEST_URI']);}
 
 Si vous étes logué avec le profil `PROFIL_VISITOR`, toutes tentatives d’accès à l'administration  vous renvoi sur la page d'accueil du site.
 
-**Pour se déconnecter :** Vous pouvez ajouter dans le thème ce lien de déconnexion, dans le fichier **footer.php** sur la ligne avant la balise `</footer>` ou pour le cas d'une page statique , dans celle-ci.
+**Pour se déconnecter :** Vous pouvez ajouter dans le thème ce lien de déconnexion, dans le fichier **footer.php** sur la ligne avant la balise `</footer>` ou pour le cas d'une page statique , dans celle-ci. Le lien ne s'affiche que si vous étes connecté.
 
 ```
-<?php 	if(isset($_SESSION['profil']) and $_SESSION['profil'] == '5') { echo '<a href="/core/admin/auth.php?d=1" class="alert orange">Déconnexion</a>' ;} 	?>
+<?php 	
+if(isset($_SESSION['profil']) and $_SESSION['profil'] == '5') { echo '<a href="/core/admin/auth.php?d=1" class="alert orange">Déconnexion</a>' ;} 	
+?>
 ``` 
 
 N’hésitez pas a forker et commenter.
