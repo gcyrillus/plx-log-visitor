@@ -17,16 +17,20 @@
         # appel du constructeur de la classe plxPlugin (obligatoire)
         parent::__construct($default_lang);
 
-            # Ajoute des hooks
-            foreach(self::HOOKS as $hook) {
-                $this->addHook($hook, $hook);
-            }
+		# droits pour accéder à la page config.php et admin.php du plugin
+		$this->setConfigProfil(PROFIL_ADMIN);
+		$this->setAdminProfil(PROFIL_ADMIN);
+		
+		# Ajoute des hooks
+		foreach(self::HOOKS as $hook) {
+			$this->addHook($hook, $hook);
+			}
         }
 
-		        public function AdminPrepend() {
+		public function AdminPrepend() {
             echo self::BEGIN_CODE;
 ?>
-         const PROFIL_VISITOR = 5;  
+         			const PROFIL_VISITOR	= 5;  
 <?php
             echo self::END_CODE;
         }
@@ -49,7 +53,7 @@
                 PROFIL_MODERATOR => L_PROFIL_MODERATOR,
                 PROFIL_EDITOR => L_PROFIL_EDITOR,
                 PROFIL_WRITER => L_PROFIL_WRITER,
-                PROFIL_VISITOR => L_PLUGINS_REQUIREMENTS_NONE  // affiche aucun en fr à partir des fichiers lang de PluXml
+                PROFIL_VISITOR => L_PLUGINS_REQUIREMENTS_NONE  // affiche aucun à partir des fichiers lang de PluXml
             );
 
 <?php
