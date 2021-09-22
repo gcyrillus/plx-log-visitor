@@ -1,8 +1,11 @@
-# plx-log-visitor
+## plx-log-visitor
 
-squelette d'un plugin laissant l’accès à une page après connexion.
+Plugin laissant l’accès à une page après connexion.
 
-installé le plugin via l'administration.
+déposer dans le dossiers **/plugins** de votre PluXml le répertoire **/visitor** et tout ses fichiers. (l'archive téléchargeable)
+
+installez le plugin via l'administration.
+L'ajout d'un nouveau profil est aussitôt disponible dans la gestion des utilisateurs. Il est conseillé de lancer la configuration du plugin avant de modifier modifier votre liste d'utilisateurs.
 
 cliquez sur configuration. 
 Un backup du fichier users.xml est effectué en users.xml.bak et un fichier username.csv est créer dans le répertoire du plugin avec les entêtes suivant:
@@ -21,20 +24,22 @@ Un champ supplémentaire est alors disponible pour les profiles utilisateurs dan
 Exemple d'usage basique pour obliger a s'identifier pour accéder à une page article ou categorie:
 
 Ajouter dans les fichiers du thème et en première ligne: **article.php** et **article-full-width.php** , idem pour **categorie.php** et **categorie-full-width.php** la portion de code suivante qui renverra l'utilisateur sur la page d'authentification pour y accéder.
+
+si vous souhaitez proteger **seulement une page statique**, ce code est alors à inserer dans la page statique uniquement.
 ```
 <?php if($_SESSION['profil']!='') {}
 else {header('Location: /core/admin/auth.php?page='.$_SERVER['REQUEST_URI']);}
 ?>
 ``` 
 
-Si vous étes logué avec le profil `PROFIL_VISITOR`, toutes tentatives d’accès à l'administration doit vous renvoyer sur la page d'accueil du site.
+Si vous étes logué avec le profil `PROFIL_VISITOR`, toutes tentatives d’accès à l'administration  vous renvoi sur la page d'accueil du site.
 
-Pour se déconnecter : Vous pouvez ajouter dans le thème ce lien de déconnexion, dans le fichier **footer.php** sur la ligne avant la balise `</footer>`.
+Pour se déconnecter : Vous pouvez ajouter dans le thème ce lien de déconnexion, dans le fichier **footer.php** sur la ligne avant la balise `</footer>` ou pour le cas d'une page statique , dans celle-ci.
 
 ```
 <?php 	if(isset($_SESSION['profil']) and $_SESSION['profil'] == '5') { echo '<a href="/core/admin/auth.php?d=1" class="alert orange">Déconnexion</a>' ;} 	?>
 ``` 
 
-N'hesitez pas a forker et commenter.
+N’hésitez pas a forker et commenter.
 
 Cdt GC
