@@ -1,4 +1,5 @@
-# visitor en bêta 2 
+# plx-log-visitor
+
 squelette d'un plugin laissant l’accès à une page après connexion.
 
 installé le plugin via l'administration.
