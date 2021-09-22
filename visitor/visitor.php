@@ -36,7 +36,7 @@
         }
 
         public function OnDeactivate() {
-            # code à exécuter à la désactivation du plugin
+            # code à exécuter à la désactivation du plugin, désactive les comptes utilisateurs
 			
 			$deactivateVisitors=simplexml_load_file(PLX_ROOT.PLX_CONFIG_PATH."users.xml") or die("Error: Cannot create object");
 			foreach($deactivateVisitors->children() as $users) {
@@ -46,6 +46,18 @@
 			} 
 			$deactivateVisitors->asXml(PLX_ROOT.PLX_CONFIG_PATH."users.xml");
 	}
+
+        public function OnActivate() {
+            # code à exécuter à l’activation du plugin , réactive compte visiteur s'il y en a 
+			$reactivateVisitors=simplexml_load_file(PLX_ROOT.PLX_CONFIG_PATH."users.xml") or die("Error: Cannot create object");
+			foreach($reactivateVisitors->children() as $users) {
+			  if (( $users['profil'] =='5') and ( $users['delete'] =='1') ) {
+			  $users->attributes()->delete = '0';
+			  }
+			} 
+			$reactivateVisitors->asXml(PLX_ROOT.PLX_CONFIG_PATH."users.xml");			
+			
+			
 
 	
         public function AdminTopEndHead() {
