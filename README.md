@@ -1,6 +1,10 @@
-## plx-log-visitor
+## plx-log-visitor  <sub><sup>Obsolete</sup></sub>
 
-Plugin laissant l’accès à une page après connexion.
+___
+#### Voir https://github.com/gcyrillus/PLX_VIP_ZONE pour une version complete et confortable d'utilisation.
+___
+
+Squelette de plugin laissant l’accès à une page après connexion.
 
 déposer dans le dossiers **/plugins** de votre PluXml le répertoire **/visitor** et tout ses fichiers. (l'archive téléchargeable)
 
